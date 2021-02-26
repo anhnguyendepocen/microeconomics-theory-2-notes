@@ -1,4 +1,4 @@
-## Topic 1: Akerlof Lemon Market:
+## Topic 1: Akerlof Lemon Market
 ### **1.A Selling a used car**
 * Quality of the car: $v \in [0,1]$
     * Buyer: The car is worth $v$.
