@@ -101,13 +101,64 @@ $$e^*(w):=argmax_{e\in\{H,L\}}\int_0^1[v(w(\pi))-g(e)]f_e(\pi)d\pi$$
   * Compare $w_L$ and $w_H$.
 
 **Obs. 1: $w_L$ is constant and is equal to $v^{-1}(\bar{u}+g(L))$.**
+
 *Proof:*
 * Agent needs to accept the offer: individual rationality (IR), $v(w_L)-g(L)=\bar{u} \Rightarrow w_L=v^{-1}(\bar{u}+g(L))$.
 * Tom is incentivized to choose $L$: incentive compatibility (IC), $v(w_L)-g(L) \geq v(w_H)-g(H)$ is auto satisfied since $g$ is increasing.
 
-**Obs. 2: For $w_H$, IR is binding.**
+**Obs. 2: For $w_H$, IR is binding. Individual rationality: $\int_0^1[v(w(\pi))-g(H)]f_H(\pi)d\pi \geq \bar{u}$**
+
 *Proof:*
 * By contradiction, if IR is not binding, there exist $\epsilon > 0$, such that $\int_0^1 [v(w(\pi))-g(H)]f_H(\pi)d\pi + \epsilon = \bar{u}$.
 * Construct $w'(\pi)$, such that $v(w(\pi)) - \epsilon = v(w'(\pi))$, meaning under $w'(\pi)$, Tom always get $\epsilon$ regardless of his effort. Hence, IC still holds.
 * $w'(\pi)$ yields Boss a higher return, hence a un-binding $w(\pi)$ cannot be optimal to Boss.
 * Boss will make a binding offer under the optimization condition.
+
+<img src="IR_binding.png" alt="drawing" height="300"/>
+
+**Obs. 3: For $w_H$, IC is binding. Incentive compatibility: $\int_0^1[v(w(\pi))-g(H)]f_H(\pi)d\pi \geq \int_0^1[v(w(\pi))-g(L)]f_L(\pi)d\pi$**
+
+*Proof:*
+* $w$ is not everywhere constant; otherwise Tom will exerts $L$ for best payoff.
+* There exists 2 Lebesgue measure-$\delta > 0$ sets $\Pi, \Pi' \subset [0,1]$, s.t. $w(\pi) \geq w(\pi')+2\epsilon$ for some $\epsilon > 0$ for every $\pi \in \Pi$ and $\pi' \in \Pi'$.
+* If IC is not binding, Boss can lower $w(\pi)$ by $\epsilon$ such that gives Boss a higher return; Boss can increase $w(\pi')$ by $\epsilon$ such that gives Tom a higher return. The unbinding region will result in above 2 cases; however, when Boss needs to incentive Tom to choose high level and maximize his own utility, $\epsilon \to 0$, indicating IC binding.
+
+
+<img src="IC_binding.png" alt="drawing" height="400"/>
+
+**Optimal solution to incentivize high effort:**
+$$
+L(w)=\int_0^1 [\pi-w(\pi)]f_{H(w)}(\pi)d\pi + \\
+\gamma (\int_0^1[v(w(\pi))-g(H)]f_H(\pi)d\pi \geq \bar{u}) + \\
+\mu (\int_0^1[v(w(\pi))-g(H)]f_H(\pi)d\pi \geq \int_0^1[v(w(\pi))-g(L)]f_L(\pi)d\pi)
+$$
+
+By FOC ($\frac{L(w)}{w}=0$):
+$$
+-f_H(\pi) + \gamma v'(w)f_H(\pi) + \mu v'(w)(f_H(\pi)+f_L(\pi))=0
+$$
+$$
+\Rightarrow \ w(\pi)=(v')^{-1}(k(\pi)), \ where \\
+k(\pi)=\frac{1}{\gamma+\mu(1-f_{L}(\pi)/f_H(\pi))}
+$$
+Since 2 constraints are binding, $\gamma,\mu > 0$.
+$v'$ is decreasing (Tom is risk adverse), then $v'^{-1}$ is increasing in $k(\pi)$. Hence, $w(\pi)$ has the same trend as $k(\pi)$.
+
+**Optimal wage: $w^*$ is not necessarily monotone in $\pi$, as $k$ is not necessarily monotone in $\pi$.**
+* $w$ is monotone iff $f_H(\pi)/f_L(\pi)$ is increasing in $\pi$. [**"monotone likelihood ratio property"** or **"likelihood ratio dominance"**]
+* This means it is possible that higher profit leads to lower wage. Wage increases with profit when high effort does lead to higher possibility of profit increase.
+* "Likelihood ratio dominance" is sufficient but not necessary for FOSD(First order stochastic dominance?).
+
+**Optimal wage: $w^*$ is not constant.**
+* Comparing with inflexible contract $(H,w_H)$,
+$$
+E[v(w_H)]=\bar{u}+g(H)=E[v(w^*)]
+$$
+* $E[w^*] > E[w_H]$ since $v$ is concave. Payment is higher with risks when Boss are signing for a flexible contract, such that expected payoff to Tom is indifferent.
+
+**Efficiency:**
+* Boss is worse off if he wants to incentivize $H$ and if effort is incontractible. Tom is indifferent.
+* In contrast, to incentivize $L$, whether effort is contractible does not matter.
+* Efficiency loss (due to “moral hazard”):
+  * If if Boss chooses to incentivize high effort, the risk put in the wage scheme is pure waste.
+  * When effort is incontractible, the additional cost to incentivize high effort may make Boss compromise on low effort, which he otherwise would not if effort were contractible.
