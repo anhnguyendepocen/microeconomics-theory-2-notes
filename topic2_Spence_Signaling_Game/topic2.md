@@ -117,8 +117,8 @@ $$w(e) - a(e) \leq w(e^*) - a(e^*)$$
 **Summary of PBE:**
 
 $(e_A, e_S,w,p)$ constitudes a pooling PBE iff:
-* e_S=e_A:=e^*
-* e^* \leq a^{-1}(qS)
+* $e_S=e_A:=e^*$
+* $e^* \leq a^{-1}(qS)$
 * $w(e)=\begin{cases}
 qS,\quad &e=e^* \\\\
 \leq min \{[w(e^*)-s(e^*)]+s(e),[w(e^*)-a(e^*)]+a(e)\},\quad &else
