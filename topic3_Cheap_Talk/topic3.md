@@ -137,3 +137,58 @@ For a given $b$, we can find the corresponding $N^*$. Plot below shows how $N^*$
 * No lies in PBE:
   * Because of Bayesian consistency.
   * A message can include more or less information to Receiver, however it cannot be misleading or deceiving.
+
+### 3.F Questions
+
+A CEO is being advised by a local manager about capital allocation to the manager. The
+manager can say anything he wants to the CEO, at no cost. The CEO wants to gear her
+decision to the local information that only the manager has, but the manager is known to want the decision to differ systematically from what the CEO would want in any particular state because of empire building. The CEO decides how much capital $a \geq 0$ to allocate, depending on the local state $t \in [0,1]$. The payoff function of the CEO is $U^C = -(a - t)^2$. And the payoff function of the manager is $U^M = -(a - t - b)^2, \ b > 0$.
+
+---
+**Q1: Prove that full revelation (truth telling) is not a PBE.**
+  
+  *Sol:*
+  If truth-telling is PBE, then the receiver will maximize his utility at $t^*=a$.
+  However, sender can always deviate to $t'=b+a$ to maximize his utility, which cannot be truth-telling any more.
+
+---
+
+---
+**Q2: Let $b = 1/20$ , identify all (pure) PBE (consider CEO's action is one-to-one for on path messages).**
+  
+  *Sol:*
+  * $N^* = 0.5+\sqrt{0.25+10} = 3.91 \to N^* = 3$
+  * $N=1$: babbling, $a_1=0.5$.
+  * $N=2$: $t_1=2/5$, $a_1=1/5$ and $a_2=7/10$.
+  * $N=3$: $t_1=2/15$ and $t_2=7/15$, $a_1=1/15$, $a_2=3/10$ and $a_3=22/30$.
+
+---
+
+---
+**Q3: Let $b = 1/20$ . Suppose instead of listening to the report from the manager
+and playing a game as described above, the CEO can also choose to delegate the decision-making ( capital allocation) to the manager. Which way would the CEO prefer? Does CEO's preference depend on b? Explain intuitively.**
+
+  *Sol:*
+  * If manager makes the decision, he will choose $t=a+b$ to maximize his payoff, which yields CEO payoff $U^C=-b^2=0.0025$.
+  * If CEO makes the decision, his best payoff is 
+  $$U^C = \int_0^1-(t-a_i)^2dt = \\ 
+  \int_0^{2/15}-(t-1/15)^2 + \int_{2/15}^{7/15}-(t-3/10)^2 + \int_{7/15}^1-(t-22/30)^2 = -0.016$$
+  * CEO will prefer to let manager make the decision.
+---
+
+---
+**Q4: Suppose now the CEO is being advised by two local managers. Local manager 1 and local manager 2 have identical (and perfect) local information and report simultaneously to the CEO. The utility function of the manager is $U^i = -(a - t - b_i)^2$, $b_i > 0$, $i = \{1,2\}$. Is full revelation a PBE in this case? If so, try to characterize one.**
+ 
+  *Sol:*
+  * Full revelation can be a PBE.
+  * $$
+      \alpha(m_1,m_2) = \begin{cases} 
+      a,\quad &m_1 \neq m_2 \\\\
+      0,\quad &else
+      \end{cases}
+      $$
+  * Two managers will report the true and the same status $m(t)$, otherwise they will get $-(t+b)^2$ payoff.
+  * Managers have no incentive to deviate: they will only deviate to the same type if they want positive funding, however they cannot deviate to the same type if their interest are different ($b_1 \neq b_2$).
+
+
+---

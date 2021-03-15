@@ -162,3 +162,50 @@ $$
 * Efficiency loss (due to “moral hazard”):
   * If if Boss chooses to incentivize high effort, the risk put in the wage scheme is pure waste.
   * When effort is incontractible, the additional cost to incentivize high effort may make Boss compromise on low effort, which he otherwise would not if effort were contractible.
+
+### 4.E Questions
+
+Consider a moral hazard model where a worker chooses an effort level $e \in [0,1]$; and as a result, either a high or a low output $y \in \{y_l,y_h\}$ is realized with $0 = y_l < y_h < 1$: Denote the probability that $y = y_h$ for effort level $e$ is given by $p(e) = e$: The employer's payoff is $y - w$; where $w$ denotes the wage paid to the worker. The workers payoff is $w - e^2$ if she accepts the contract, and 0 if she rejects the contract.
+
+---
+**Q1: Characterize the optimal contract in which the principal maximizes his net utility in the case where the wage $w$ can depend on $e$ (because $e$ is observable).**
+
+*Sol:*
+* The principle wants to maximize his utility:
+  $$U^p=E[y(e)]-w$$
+  , subject to $w \geq e^2$.
+* Constraints are binding, since for an observable $e$, employer wants to give a lowest possible wage to maximize his utility.
+* $$
+  U^p=ey_h+(1-e)y_l-e^2 \\
+  \to e^*=\frac{y_h-y_l}{2}=\frac{y_l}{2}, \ w^*=(\frac{y_l}{2})^2
+  $$
+* Off-EQ path: for $e \neq \frac{1}{2}y_h$, set $w(e)=-K$ for a large $K$.
+  
+---
+
+---
+**Q2: Characterize the optimal contract, maximizing the principals net utility, when only $y$ is observable and variable.**
+
+*Sol:*
+* Suppose $e^*$ is the EQ effort level, $e^* \in argmax_e(e(w_h-e^2)+(1-e)(w_l-e^2))$:
+  $$e^* = \frac{w_h-w_l}{2}$$
+* Among all $e^*$, the principle wants to maximize his expected payoff:
+  $$U^p = e(y_h-w_h)+(1-e)(y_l-w_l) \to \\
+  U^p = y_l-w_l+(y_h-y_l)\frac{w_h-w_l}{2}-\frac{(w_h-w_l)^2}{2}$$
+  $$e^* = y_h/2=(w_h-w_l)^*/2$$
+  $$U^p = -w_l$$
+* From $U^A \geq 0$,
+  $$y_h^2/4 + w_l \geq 0$$
+  
+* $w_l^* = -y_h^2/4$, $w_h^* = y_h - y_h^2/4$
+  $\to w^* = y - y_h^2/4$
+
+---
+
+---
+**Q3: Suppose now that the contract requires limited liability in the sense that $w(y) \geq 0$ for all $y$. Does your solution change from Question 2 and if it does, compute the newly optimal contract and effort level under limited liability.**
+
+*Sol:*
+* $w_l^*=0, w_h^*=y_h/2$
+
+---
