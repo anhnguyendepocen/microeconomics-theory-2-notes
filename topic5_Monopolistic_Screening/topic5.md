@@ -62,3 +62,152 @@ $$
 *Proof:*
 * $LHS \geq RHS$: Since truth-telling is always an option, the other EQ should be no less than truth-telling EQ.
 * $RHS \geq LHS$: Suppose $(x,p)$ is the outcome for $LHS$, by **Revelation Principle**, $D(x,p)$ is truth-compatible. Hence, $p$ is also an option, such that $RHS \geq E[p] = LHS$.
+  
+### 5.D Optimal Direct Mechanism
+From 5.C, it is known that solving the optimal direct mechanism(s) is enough.
+The seller's problem now 
+$$max_{p \in \mathcal{P}}E[p(v)]$$
+, where
+* $\mathcal{P} = \{p: \text{D(x,p) is true-compatible for some }x:[0,v]\to[0,1]\}$
+* IC: $x(v)v-p(v) \geq x(v')v-p(v'),\forall v' \in [0,V]$
+* IR: $x(v)v-p(v) \geq 0$
+
+---
+**Obs. 1: If $D(x,p)$ is truth-compatible, then $x(v)$ is non-decreasing.**
+
+Higher types have better chance of getting the car.
+
+*Proof:*
+* IC implies truth-revealing is always an optimal strategy. Then for $v > v'$,
+  $$x(v)v-p(v) \geq x(v')v-p(v')$$
+  $$x(v')v'-p(v') \geq x(v)v'-p(v)$$
+* Rearranging yields $x(v) \geq x(v')$.
+---
+
+---
+**Obs. 2: If $D(x,p)$ is truth-compatible, then $U(v)$ is differentiable for any $v$ where $x$ is continuous, and $U'(v)=x(v)$.**
+
+Marginal utility equals to probability of trading.
+
+*Proof:*
+* For any $v > v'$,
+  $$U(v) \geq x(v')v-p(v') = x(v')v-x(v')v'+x(v')v'-p(v') \\
+  = x(v')(v-v')+U(v')$$
+  $$\Rightarrow \frac{U(v)-U(v')}{v-v'} \geq x(v)$$
+  Similarly, 
+  $$\frac{U(v)-U(v')}{v-v'} \leq x(v')$$
+* Since $x$ is continuous, $x(v') \to x(v)$ as $v' \to v$.
+* $$U'(v)=lim_{v' \to v}\frac{U(v)-U(v')}{v-v'}=x(v)$$
+
+---
+
+---
+**Obs. 3: [Payoff equivalence for buyer] If $D(x,p)$ is truth-compatible, then**
+$$U(v) = U(0)+\int_0^v x(t) dt$$
+
+If two different mechanisms have the same allocation rule $x$ and charges the type 0 buyer the same amount $p(0)$, then buyer is indifferent between them regardless of their type.
+
+*Proof:*
+* $x$ is monotone, meaning it is almost every continuous.
+* Hence, $U$ is almost everywhere differentiable.
+
+---
+
+---
+**Obs. 4: [Payoff/revenue equivalence for seller] If $D(x,p)$ is truth-compatible, then**
+$$p(v) = p(0)+x(v)v-\int_0^v x(t) dt$$
+
+Payment rule is determined by $x$ and type 0's payment. \
+Same allocation rule and payment for type 0 implies same payment rule. \
+Seller's payoff depends only on $x$ and type 0's payment.
+
+*Proof:*
+* Obvious from **Obs. 3**.
+
+---
+
+---
+**Obs. 5: IR is satisfied if and only if $U(0) \geq 0$.**
+
+Buyer of any type is willing to accept contract as long as type 0 buyer is willing to accept.
+
+*Proof:*
+* $U(v) \geq U(0)$ since $x \geq 0$. Thus $U(0) \geq 0$ implies $U(v) \geq 0$, which means IR is satisfied for all types.
+
+---
+
+---
+**Lemma. $D(x,p)$ is truth-compatible if and only if**
+1. **$x$ is non-decreasing**
+2. **$p(v) = \underline{p}+x(v)v-\int_0^v x(t) dt$ for some $\underline{p} \leq 0$.**
+
+The entire contract is determined by any non-decreasing allocation rule $x$ and non-positive bottom payment $\underline{p} (=-U(0))$.
+
+*Proof:*
+* Sufficiency from **Obs. 1-5**
+* Necessity: suppose $D(x,p)$ is not truth-compatible, which means buyer will make profitable deviation to reveal a false type $v'$ if his true type is $v$.
+  $$x(v')v - p(v') \geq x(v)v - p(v)$$
+  $$x(v')v - x(v')v' + x(v')v' - p(v') \geq x(v)v - p(v)$$
+  $$x(v')(v-v') + \int_0^{v'}x(t)dt \geq \int_0^{v}x(t)dt$$
+  $$x(v')(v-v') \geq - \int_0^{v'}x(t)dt + \int_0^{v}x(t)dt \geq (v-v')x(v')$$
+  The "=" holds when $x(v)=x(v')$ for some $v \neq v'$.
+  Hence, the buyer has no inventive to deviate, since deviation yields no better payoff.
+
+---
+
+---
+**Obs. 6: If $(x,\underline{p})$ solves the above optimization problem then $\underline{p}=0$.** 
+
+*Proof:*
+* $\underline{p} \geq p(v)$ for any $v$ implies $\underline{p}=0$.
+
+---
+
+---
+**Obs. 7: $\mathcal{M}$ is convex and compact in the metric space induced by $L^1$ norm.**
+
+The optimization is simplified to 
+$$max_{x \in \mathcal{M}}E[x(v)v-\int_0^vx(t)dt]$$
+, where $\mathcal{M}$ is the set of all non-decreasing functions from $[0,V]$ tp $[0,1]$.
+
+*Proof:*
+* Convexity: from linearity.
+* Compactness: from "closed" and "bounded".
+
+---
+
+---
+**Obs. 8: Seller's payoff is continuous and linear in $x$.**
+
+Seller's payoff is maximized at the extreme points of $\mathcal{M}$. \
+Extreme points of $\mathcal{M}$ is known to be one-step functions.
+
+---
+
+---
+**Lemma. If $x$ is a one-step function, $x(v)v-\int_0^vx(t)dt$ is also a one-step function.**
+
+It implies $E[\cdot] = P(1-F(P))$, where $P$ is the step height.
+
+---
+
+---
+**Optimal Selling Mechanism: a direct mechanism $D(x,p)$ is an optimal selling mechanism, where**
+$$
+x^*(v) = \begin{cases} 
+0,\quad &v < P^* \\\\
+1,\quad &v \geq P^*
+\end{cases}
+$$
+
+$$
+p^*(v) = \begin{cases} 
+0,\quad &v < P^* \\\\
+P^*,\quad &v \geq P^*
+\end{cases}
+$$
+$$P^* = argmax_{P \in [0,V]} P(1-F(P)), F = F(v)$$
+
+Seller can either put a price tag $P^*$ on the car or offer $P^*$ without any bargaining possibility.
+
+---
