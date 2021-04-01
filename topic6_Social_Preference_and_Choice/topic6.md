@@ -49,4 +49,14 @@
   * Everyone is treated equally: "symmetry" or "anonymity".
   * "Majority" satisfies while "dictatorship" does not.
   * **Non-dictatorship:** There is no such $i \in N$ such that $f(\succ_1,...,\succ_n)=\succ_i$ for every $(\succ_1,...,\succ_n) \in \mathcal{D}$. **Democracy implies non-dictatorship, but not vice versa.**
-* **Independence of Irrelevant Alternatives (IIA):** 
+* **Independence of Irrelevant Alternatives (IIA):** Given two preference profiles $(\succ_1,...,\succ_n)$ and $(\succ_1',...,\succ_n')$, if $x \succ_i y \Leftrightarrow x \succ_i' y$ for everyone $i \in N$, then $x \succ^* y \Leftrightarrow x \succ^\# y$ where $\succ^* = f(\succ_1,...\succ_n)$ and $\succ^\# = f(\succ_1',...\succ_n')$.
+  * When a pair $(x,y)$ has the same priority across different preference profiles, they are irrelavant to group choice strategy, since they maintain the same priority in the group preference.
+  
+$f$, which satisfies all 5 (non-dictatorship, or better democracy) properties, is a nice preference generator. "Dictatorship" satisfies all but 4. "Majority" satisfies all but 2 when $n$ is odd; satisfies all when $|X|=2$.
+
+### 6.D Arrow's Impossibility Theorem
+---
+
+
+
+---
