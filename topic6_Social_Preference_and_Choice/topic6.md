@@ -140,7 +140,7 @@ $\succ^* = f(\succ_1,...,\succ_N )$. For any alternative $y \neq x$, $y \succ^* 
     Then if $g(P)=c$, $g(P')=c$ since $c$ is more desirable in $P'$ than in $P$.
 
 ---
-**Muller-Satterthwaite Impossibility Theorem:** If $|X| > 2$ then there does not exist a group choice function $g$ that satisfies all of the
+**Muller-Satterthwaite Impossibility Theorem.** If $|X| > 2$ then there does not exist a group choice function $g$ that satisfies all of the
 following:
 1. Pareto
 2. Non-dictatorship
