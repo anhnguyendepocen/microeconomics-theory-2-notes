@@ -86,3 +86,5 @@ group choice functions.
   * Step 1. First think about allocation rule $q$ making $W_i$ non-decreasing and implementable.
   * Step 2. Freely choose $T_i(0)$ for the type 0 guy.
   * Step 3. Set transfer rules $t_i(\theta) = T_i(\theta_i)$ using Corollary.
+
+### 8.C Application 1: Literal Revenue Equivalence in Auctions
