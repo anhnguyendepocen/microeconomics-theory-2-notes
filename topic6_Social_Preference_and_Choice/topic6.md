@@ -130,7 +130,7 @@ $\succ^* = f(\succ_1,...,\succ_N )$. For any alternative $y \neq x$, $y \succ^* 
 
 ---
 
-### 6.F Features of Gourp Choice
+### 6.F Features of Group Choice
 1. **Pareto:** If $x \succ_i y$ for every $i=1,...,n$, then $f(\succ_1,...,\succ_n) \neq y$. 
 2. **Non-dictatorship:** $g$ is not a dictatorship.
 3. **Monotonicity:** Given two preference profiles $(\succ_1,...,\succ_n)$ and $(\succ_1',...,\succ_n')$, if $x = g(\succ_1,...,\succ_n)$ and moreover for every $i$, the set of alternatives worse than $x$ weakly expands under $\succ_i'$, then $g(\succ_1',...,\succ_n') = x$.
@@ -150,3 +150,16 @@ following:
 Similar to **Obs.3** and **Obs.4**, a $g$ satisfying Pareto and Monotonicity will be a dictatorship, which is a contrast.
 
 ---
+
+### 6.G Questions
+Which of the axioms of Arrow's Impossibility Theorem does the following social choice rule
+violate? 
+1. If person #1 and person #2 have exactly the same rankings of the
+alternatives, then the social choice rule will exactly coincide with their ranking;
+2. If their rankings are different in any way, then the social choice rule will coincide with person #3's ranking.
+
+*Sol:*
+* Pareto: satisfied from definition.
+* Non-dictatorship: satisfied from definition.
+* Completeness and transitivity: satisfied since no restriction on voter's profile.
+* IIA: violated, since if #1 agrees with #2, then the group choice goes with #1 (or #2). Let #3 be with the same profile but a single permutation for first and last element from #1, then some change for irrelevant pairs in #2's preference will result in a certain final change.

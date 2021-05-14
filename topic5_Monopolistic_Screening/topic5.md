@@ -211,3 +211,40 @@ $$P^* = argmax_{P \in [0,V]} P(1-F(P)), F = F(v)$$
 Seller can either put a price tag $P^*$ on the car or offer $P^*$ without any bargaining possibility.
 
 ---
+
+### 5.E Questions
+A monopolist(principle) in the market produces a good of variable quality $q \geq 0$ at cost $C(q)$ per unit of good. The consumer (agent) wants to buy one unit of the good. The consumer has different tastes over the product, characterized by $\theta$. If Agent buys quality $q$ at price $p$, his utility is $u(q,p;\theta) = \theta q -p$, and the profit for the monopolist: $\pi = p - C(q)$. The consumer's reservation utility is $U_R = 0$. The consumer knows his taste $\theta$; The monopolist has prior beliefs $\theta \in \{\theta_L,\theta_H\}$ with $\theta_L < \theta_H$ and $Pr(\theta=\theta_H) = p$. You can assume that the outside option of not buying yields zero utility.
+
+**Q1.** If $\theta$ is observed by the monopolist, characterize the monopolist's optimal pricing scheme.
+
+*Sol:* 
+For the given $\theta$, the problem is 
+$$max_{q,p} \{p - C(q)\}, s.t. \ U_{\theta}=\theta q - p \geq 0$$
+, can be reduced to 
+$$max_{q} \{\theta q -C(q)\}, s.t. \ q \geq 0$$
+, which gives $C'(q^0) = \theta$, $p^0 = q^0\theta$. Price extracts all surplus from consumer (perfect price discrimination).
+
+**Q2.** Under incomplete information, characterize the monopolist's optimal pricing scheme.
+
+*Sol:* 
+For $\theta$ not given , the problem is 
+$$max_{p_H,p_L} E[p - C(q)]
+, \text{s.t. IC, IR}$$
+, can be reduced to 
+$$max_{p_H,p_L} \  p[p_H - C(q_H)] + (1 - p)[p_L - C(q_L)] \\
+s.t. \ U_{\theta_{H}}=\theta_H q_H - p_H \geq 0 \ (1)\\
+\ \ \ \ \ \  U_{\theta_{L}}=\theta_L q_L - p_L \geq 0 \ (2)\\
+\ \ \ \ \ \  \theta_H q_H - p_H \geq \theta_H q_L - p_L \ (3)\\
+\ \ \ \ \ \  \theta_L q_L - p_L \geq \theta_L q_H - p_H \ (4)$$
+(3) and (4) gives $q_H \geq q_L$. (1) is non-binding and can be excluded by (3). (2) is binding, $p_L = \theta_L q_L$. (4) is non-binding, since $0 \geq \theta_L q_H - p_H$ gives no upper bound on $p_H$. (3) binds necessarily: otherwise we can increase $p_H$ as much as possible while still maintaining the other constraints.
+
+Denote high value customer's surplus as $R_H = \theta_H q_H - p_H = \theta_H q_L - p_L = q_L(\theta_H - \theta_L)$.The problem can be further reduced to 
+$$max_{p_H,p_L} \  p[\theta_H q_H - C(q_H) -R_H] + (1 - p)[\theta_L q_L - C(q_L)] \\
+s.t. \ q_L \leq q_H$$
+, which by FOC gives $C'(q^*_H) = \theta_H$, then $q^*_H = q^0_H$; and $C'(q^*_L) = \theta_L - (\theta_H - \theta_L)\frac{p}{1-p}$. $C'(q^*_L) \leq \theta_L$ gives $0 \leq q^*_L < q^0_L$, or $q^*_L = q^0_L = 0$.
+
+
+**Q3.** Compare the two pricing schemes in Question 1 and Question 2.
+
+*Sol:* It is obvious that, under incomplete information, if a pricing scheme described in Question 1 is used, the high-taste consumer will for sure want to deviate.
+That's why in Question 2, we need to offer the high-taste consumer positive surplus $R_H$. $R_H$ is called **Informational Rent**, the rent necessary to pay to obtain information revelation about $H$. In this case, we have efficient high quality for high-taste consumer (no distortion at the top): $q^*_H = q^0_H$ but inefficiency at the bottom. Low quantity is sub-optimal for low-taste consumer: $q^*_L < q^0_L$.
